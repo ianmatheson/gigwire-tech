@@ -1,15 +1,22 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
+import Stopwatch from './components/Stopwatch.js'
+import Header from './components/Header.js'
+import './App.css'
 
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <body>
+          <Stopwatch />
+        </body>
 
-function App() {
-  return (
-    <div>
-      <p>
-        Learn React
-      </p>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
