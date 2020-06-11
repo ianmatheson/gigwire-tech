@@ -7,6 +7,7 @@
   width: 400px;
   background-color: #807182;
   box-shadow: 0 3px 6px rgb(12, 12, 12);
+  float: right;
 }
 
 .Stopwatch-header {

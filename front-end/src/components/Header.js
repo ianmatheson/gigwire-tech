@@ -6,10 +6,19 @@ class Header extends React.Component {
     return (
       <div>
         <ul>
-          <li><a href="profile.asp">Profile</a></li>
-          <li><a href="">GigWire</a></li>
-          <li style={{"float":"right"}}><a href="profile.asp">Invite Members</a></li>
-        </ul>      
+          <a href="">
+            <img src={require('../images/logo-white.png')} className="logo" />
+          </a>
+          <a href="" className="butt">
+            <button className="button">
+              Invite Members
+            </button>
+          </a>
+          <a href="">
+            <img src={require('../images/profilePic.png')} className="profile" />
+          </a>
+          {/* <li style={{"float":"right"}}><a href="profile.asp">Profile</a></li> */}
+        </ul>
       </div>
     );
   }

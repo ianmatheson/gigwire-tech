@@ -27,11 +27,13 @@ class Stopwatch extends React.Component {
     clearInterval(this.timer);
   };
 
-  resetTimer = () => {
+  populateDB = () => {
     this.setState({
       timeStart: 0,
       time: 0
     });
+
+    //ADD mongo functionality
   };
 
   render() {
@@ -56,7 +58,7 @@ class Stopwatch extends React.Component {
           <button onClick={this.startTimer}>Resume</button>
         )}
         {this.state.timerOn === false && this.state.time > 0 && (
-          <button onClick={this.resetTimer}>Reset</button>
+          <button onClick={this.populateDB}>Finish!</button>
         )}
       </div>
     );

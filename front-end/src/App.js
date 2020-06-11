@@ -4,6 +4,7 @@ import axios from 'axios';
 import Stopwatch from './components/Stopwatch.js'
 import Header from './components/Header.js'
 import './App.css'
+import ProjectForm from './components/ProjectForm.js';
 
 class App extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class App extends React.Component {
       <div>
         <Header />
         <body>
+          <ProjectForm />
           <Stopwatch />
         </body>
 
