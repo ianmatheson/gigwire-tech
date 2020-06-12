@@ -20,11 +20,11 @@ class App extends React.Component {
             <img
               style={{width:200,height:200}}
               src={require("./images/onboardingIcon.svg")}
+              alt=""
             />
           </div>
           <text className="text"> Get Ready To Track Your Time! </text>
         </body>
-
       </div>
     );
   }

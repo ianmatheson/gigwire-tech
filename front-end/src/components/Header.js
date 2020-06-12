@@ -7,7 +7,7 @@ class Header extends React.Component {
       <div>
         <ul>
           <a href="">
-            <img src={require('../images/logo-white.png')} className="logo" />
+            <img src={require('../images/logo-white.png')} className="logo" alt=""/>
           </a>
           <a href="" >
             <button className="InviteButton">
@@ -15,7 +15,7 @@ class Header extends React.Component {
             </button>
           </a>
           <a href="">
-            <img src={require('../images/profilePic.png')} className="profile" />
+            <img src={require('../images/profilePic.png')} className="profile" alt=""/>
           </a>
         </ul>
       </div>

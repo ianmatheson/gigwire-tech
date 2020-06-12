@@ -8,11 +8,13 @@ class Arrows extends React.Component {
         <div className="arrow1">
           <img 
             src={require("../images/curvy.png")}
+            alt=""
           />
         </div>
         <div className="arrow2">
           <img 
             src={require("../images/curvy2.png")}
+            alt=""
           />
         </div>
       </div>

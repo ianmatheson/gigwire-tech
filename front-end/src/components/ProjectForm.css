@@ -5,7 +5,8 @@
   float: left;
   font-family: "Roboto";
   border-width: 1%;
-  border-color: #9AAFC5;
+  /* border-color: #9AAFC5; */
+  font-size: 15px;
 }
 
 .Submit {
