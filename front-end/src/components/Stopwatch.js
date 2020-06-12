@@ -44,21 +44,20 @@ class Stopwatch extends React.Component {
     let hours = ("0" + Math.floor(time / 3600000)).slice(-2);
     return (
       <div className="Stopwatch">
-        <div className="Stopwatch-header">Track Your Time!</div>
         <div className="Stopwatch-display">
           {hours} : {minutes} : {seconds} : {centiseconds}
         </div>
         {this.state.timerOn === false && this.state.time === 0 && (
-          <button onClick={this.startTimer}>Start</button>
+          <button className="start"><img src={require("../images/iconStart.svg")} onClick={this.startTimer} /></button>
         )}
         {this.state.timerOn === true && (
-          <button onClick={this.stopTimer}>Pause</button>
+          <button className="start"><img src={require("../images/iconPause.png")} onClick={this.stopTimer} /></button>
         )}
         {this.state.timerOn === false && this.state.time > 0 && (
-          <button onClick={this.startTimer}>Resume</button>
+          <button className="start"><img src={require("../images/iconStart.svg")} onClick={this.startTimer} /></button>
         )}
         {this.state.timerOn === false && this.state.time > 0 && (
-          <button onClick={this.populateDB}>Finish!</button>
+          <button className="finish" onClick={this.populateDB}>Finish!</button>
         )}
       </div>
     );

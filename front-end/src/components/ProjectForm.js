@@ -20,6 +20,7 @@ class ProjectForm extends React.Component {
   render() {
     return (
       <div>
+        <div className="placeholder" />
         <form onSubmit={this.handleSubmit}>
           <label>
             <input className="Form" type="text" value={this.state.value} onChange={this.handleChange} placeholder="What Project are you working on..."/>

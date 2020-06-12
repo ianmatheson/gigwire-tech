@@ -14,6 +14,13 @@ class App extends React.Component {
         <body>
           <ProjectForm />
           <Stopwatch />
+          <div className="onboarding">
+            <img
+              style={{width:200,height:200}}
+              src={require("./images/onboardingIcon.svg")}
+            />
+          </div>
+          <text className="text"> Get Ready To Track Your Time! </text>
         </body>
 
       </div>

@@ -1,9 +1,23 @@
 .Form {
   height: 50px;
-  width: 500px;
+  width: 55%;
+  margin-left: 110px;
+  float: left;
+  font-family: "Roboto";
 }
 
 .Submit {
   height: 58px;
-  width: 100px;
+  width: 80px;
+  float: left;
+  font-family: "Roboto";
+}
+
+.placeholder {
+  padding-top: 30px;
+}
+
+.vertPlace {
+  width: 50%;
+  padding-bottom: 100px;
 }

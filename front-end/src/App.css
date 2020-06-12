@@ -1,8 +1,21 @@
-.Timers {
-  display: flex;
-  justify-content: center;
+body {
+  background-color: #EDF2F7;
+  opacity: 1;
 }
 
-body {
-  background-color: #EDF2F7
+.onboarding {
+  flex:1;
+  align-items:'center';
+  justify-content:'center';
+  margin-left: 45%;
+}
+
+.text {
+  align-items: center;
+  padding-left: 43%;
+}
+
+@font-face {
+  font-family:"Roboto";
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
 }
