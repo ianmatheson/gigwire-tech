@@ -56,9 +56,12 @@ class Stopwatch extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.populateDB(this.state.time);
+    var frm = document.getElementsByName('contact-form')[0];
+    frm.reset();  // Reset all form data
     this.setState({
       timeStart: 0,
-      time: 0
+      time: 0,
+      formVal: ""
     });
   }
 
@@ -70,7 +73,7 @@ class Stopwatch extends React.Component {
     return (
       <div>
         <div className="placeholder" />
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} name="contact-form">
           <label>
             <input className="Form" type="text" value={this.state.value} onChange={this.handleChange} placeholder="What Project are you working on..."/>
           </label>

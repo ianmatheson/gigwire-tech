@@ -17,7 +17,6 @@ class Header extends React.Component {
           <a href="">
             <img src={require('../images/profilePic.png')} className="profile" />
           </a>
-          {/* <li style={{"float":"right"}}><a href="profile.asp">Profile</a></li> */}
         </ul>
       </div>
     );
