@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Stopwatch from './components/Stopwatch.js'
 import Header from './components/Header.js'
 import './App.css'
-import ProjectForm from './components/ProjectForm.js';
 import Arrows from './components/Arrows.js'
+import Text from './components/Text.js'
 
 class App extends React.Component {
   render() {
@@ -13,7 +12,10 @@ class App extends React.Component {
         <Header />
         <body>
           <Stopwatch />
-          <Arrows />
+          <div>
+            <Arrows />
+            <Text />
+          </div>
           <div className="onboarding">
             <img
               style={{width:200,height:200}}

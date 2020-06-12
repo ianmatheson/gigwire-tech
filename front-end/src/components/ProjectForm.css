@@ -5,6 +5,7 @@
   float: left;
   font-family: "Roboto";
   border-width: 1%;
+  border-color: #9AAFC5;
 }
 
 .Submit {
@@ -12,6 +13,7 @@
   width: 5%;
   float: left;
   font-family: "Roboto";
+  font: "Roboto";
   border-width: 1%;
 }
 

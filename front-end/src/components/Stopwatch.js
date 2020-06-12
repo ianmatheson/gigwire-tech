@@ -55,14 +55,19 @@ class Stopwatch extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.populateDB(this.state.time);
-    var frm = document.getElementsByName('contact-form')[0];
-    frm.reset();  // Reset all form data
-    this.setState({
-      timeStart: 0,
-      time: 0,
-      formVal: ""
-    });
+    if(this.state.formVal != ""){
+      this.populateDB(this.state.time);
+      var frm = document.getElementsByName('contact-form')[0];
+      frm.reset();  // Reset all form data
+      this.setState({
+        timeStart: 0,
+        time: 0,
+        formVal: ""
+      });
+    } else {
+      alert("Please enter your Project name first and submit again!")
+    }
+
   }
 
   render() {
@@ -87,10 +92,13 @@ class Stopwatch extends React.Component {
             <button className="start"><img src={require("../images/iconStart.svg")} onClick={this.startTimer} /></button>
           )}
           {this.state.timerOn === true && (
-            <button className="start"><img src={require("../images/iconPause.png")} onClick={this.stopTimer} /></button>
+            <button className="start"><img src={require("../images/stopIcon.svg")} onClick={this.stopTimer} /></button>
           )}
           {this.state.timerOn === false && this.state.time > 0 && (
             <button className="start"><img src={require("../images/iconStart.svg")} onClick={this.startTimer} /></button>
+          )}
+          {this.state.timerOn === true && this.state.time > 0 && (
+            <text className="breakText"></text>
           )}
         </div>
       </div>

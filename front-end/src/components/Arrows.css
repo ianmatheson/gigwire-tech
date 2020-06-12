@@ -1,0 +1,11 @@
+.arrow1 {
+  float: left;
+  width: 20%;
+  margin-left: 15%;
+}
+
+.arrow2 {
+  float: right;
+  width: 20%;
+  margin-right: 15px;
+}

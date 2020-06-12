@@ -10,7 +10,7 @@ class ProjectForm extends React.Component {
       time: null,
     }
   }
-  
+
   handleChange = (event) => {
     this.setState({formVal: event.target.value});
   }
