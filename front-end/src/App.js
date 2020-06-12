@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 import Stopwatch from './components/Stopwatch.js'
 import Header from './components/Header.js'
 import './App.css'
 import ProjectForm from './components/ProjectForm.js';
+import Arrows from './components/Arrows.js'
 
 class App extends React.Component {
   render() {
@@ -12,8 +12,8 @@ class App extends React.Component {
       <div>
         <Header />
         <body>
-          <ProjectForm />
           <Stopwatch />
+          <Arrows />
           <div className="onboarding">
             <img
               style={{width:200,height:200}}

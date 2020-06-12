@@ -4,17 +4,20 @@
   margin-left: 110px;
   float: left;
   font-family: "Roboto";
+  border-width: 1%;
 }
 
 .Submit {
-  height: 58px;
-  width: 80px;
+  height: 56px;
+  width: 5%;
   float: left;
   font-family: "Roboto";
+  border-width: 1%;
 }
 
 .placeholder {
   padding-top: 30px;
+  font-family: "Roboto";
 }
 
 .vertPlace {

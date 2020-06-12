@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;
 // this will be our data base's data structure 
 const DataSchema = new Schema(
   {
-    id: Number,
-    message: String
+    projectName: String,
+    time: String
   },
-  { timestamps: true }
+  { timestamps: false , collection: "hourlyTracking", versionKey: false}
 );
 
 // export the new Schema so we could modify it using Node.js

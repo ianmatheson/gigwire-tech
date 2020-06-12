@@ -13,18 +13,30 @@ body{
 .logo {
   height: 60px;
   padding-left: 100px;
-}
-
-.butt {
-  padding-top: 20px;
-  padding-right: 30px;
+  margin-top: 5px;
 }
 
 .button {
   height: 50px;
   float: right;
-  background: #1994DB;
   margin-left: 15px;
+}
+
+.InviteButton {
+  background: #1994DB;
+  border: solid 1px transparent;
+  border-radius: 2px;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  margin: 15px 40px;
+  cursor: pointer;
+  float: right;
+  font-family: "Roboto";
+}
+
+.InviteButton:hover {
+  background: #000000;
 }
 
 .profile {

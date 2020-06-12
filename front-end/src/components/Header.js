@@ -9,8 +9,8 @@ class Header extends React.Component {
           <a href="">
             <img src={require('../images/logo-white.png')} className="logo" />
           </a>
-          <a href="" className="butt">
-            <button className="button">
+          <a href="" >
+            <button className="InviteButton">
               Invite Members
             </button>
           </a>

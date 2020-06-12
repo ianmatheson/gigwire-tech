@@ -1,15 +1,17 @@
 import React from 'react';
 import "./Stopwatch.css";
+import './ProjectForm.css'
+import axios from 'axios'
 
 class Stopwatch extends React.Component {
   state = {
     timerOn: false,
     time: 0,
-    timeStart: 0
+    timeStart: 0,
+    formVal: "",
   };
 
   startTimer = () => {
-    console.log("in start")
     this.setState({
       timerOn: true,
       time: this.state.time,
@@ -23,42 +25,71 @@ class Stopwatch extends React.Component {
   }
 
   stopTimer = () => {
-    this.setState({ timerOn: false });
+    this.setState({ timerOn: false, time: this.state.time });
     clearInterval(this.timer);
   };
 
-  populateDB = () => {
-    this.setState({
-      timeStart: 0,
-      time: 0
+  putDataToDB (projectName, time) {
+    axios.post('http://localhost:3001/api/putData', {
+      projectName: projectName,
+      time: time,
     });
-
-    //ADD mongo functionality
   };
 
-  render() {
-    const { time } = this.state;
+  populateDB(time) {
     let centiseconds = ("0" + (Math.floor(time / 10) % 100)).slice(-2);
     let seconds = ("0" + (Math.floor(time / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(time / 60000) % 60)).slice(-2);
     let hours = ("0" + Math.floor(time / 3600000)).slice(-2);
+
+    let prettyTime = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString() + ":" + centiseconds.toString();
+    let projectName = this.state.formVal
+    // alert('A project name was submitted: ' + this.state.formVal + " " + prettyTime);
+
+    this.putDataToDB(projectName, prettyTime);
+  };
+
+  handleChange = (event) => {
+    this.setState({formVal: event.target.value});
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.populateDB(this.state.time);
+    this.setState({
+      timeStart: 0,
+      time: 0
+    });
+  }
+
+  render() {
+    const { time } = this.state;
+    let seconds = ("0" + (Math.floor(time / 1000) % 60)).slice(-2);
+    let minutes = ("0" + (Math.floor(time / 60000) % 60)).slice(-2);
+    let hours = ("0" + Math.floor(time / 3600000)).slice(-2);
     return (
-      <div className="Stopwatch">
-        <div className="Stopwatch-display">
-          {hours} : {minutes} : {seconds} : {centiseconds}
+      <div>
+        <div className="placeholder" />
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            <input className="Form" type="text" value={this.state.value} onChange={this.handleChange} placeholder="What Project are you working on..."/>
+          </label>
+          <input className="Submit" type="submit" value="Submit" />
+        </form>
+        <div className="Stopwatch">
+          {hours}:{minutes}:{seconds}
         </div>
-        {this.state.timerOn === false && this.state.time === 0 && (
-          <button className="start"><img src={require("../images/iconStart.svg")} onClick={this.startTimer} /></button>
-        )}
-        {this.state.timerOn === true && (
-          <button className="start"><img src={require("../images/iconPause.png")} onClick={this.stopTimer} /></button>
-        )}
-        {this.state.timerOn === false && this.state.time > 0 && (
-          <button className="start"><img src={require("../images/iconStart.svg")} onClick={this.startTimer} /></button>
-        )}
-        {this.state.timerOn === false && this.state.time > 0 && (
-          <button className="finish" onClick={this.populateDB}>Finish!</button>
-        )}
+        <div>
+          {this.state.timerOn === false && this.state.time === 0 && (
+            <button className="start"><img src={require("../images/iconStart.svg")} onClick={this.startTimer} /></button>
+          )}
+          {this.state.timerOn === true && (
+            <button className="start"><img src={require("../images/iconPause.png")} onClick={this.stopTimer} /></button>
+          )}
+          {this.state.timerOn === false && this.state.time > 0 && (
+            <button className="start"><img src={require("../images/iconStart.svg")} onClick={this.startTimer} /></button>
+          )}
+        </div>
       </div>
     );
   }

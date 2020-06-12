@@ -1,18 +1,9 @@
 .Stopwatch {
-  width: 250px;
+  width: 15%;
   float: left;
-  margin-left: 40px;
-}
-
-button {
-  background-color: #202b33;
-  border: solid 1px transparent;
-  border-radius: 4px;
-  padding: 10px 20px;
-  color: #ffffff;
-  font-size: 16px;
-  margin: 10px 10px;
-  cursor: pointer;
+  margin-left: 50px;
+  font-size: 50px;
+  font-family: "Roboto";
 }
 
 button:hover {
@@ -27,8 +18,16 @@ button:hover {
 .start {
   background-color: #EDF2F7;
   float: left;
+  width: 7%;
+  border: solid 0.1px transparent;
+  border-radius: 0.1px;
 }
 
 .finish {
   margin-top: 30px;
+}
+
+.Icon {
+  float: left;
+  width: 5%;
 }

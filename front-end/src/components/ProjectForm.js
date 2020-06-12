@@ -5,15 +5,18 @@ class ProjectForm extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {formVal: ""}
+    this.state = {
+      formVal: "",
+      time: null,
+    }
   }
-
+  
   handleChange = (event) => {
     this.setState({formVal: event.target.value});
   }
 
   handleSubmit = (event) => {
-    alert('A project name was submitted: ' + this.state.formVal);
+    alert('A project name was submitted: ' + this.state.formVal + this.state.time);
     event.preventDefault();
   }
 

@@ -23,4 +23,21 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// this is our create method
+// this method adds new data in our database
+app.post('/api/putData', (req, res) => {
+  let data = new Data();
+
+  const { projectName, time } = req.body;
+
+  console.log(projectName, time);
+
+  data.projectName = projectName;
+  data.time = time;
+  data.save((err) => {
+    if (err) console.log("ERROR: " + err);
+    return res.json();
+  });
+});
+
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
