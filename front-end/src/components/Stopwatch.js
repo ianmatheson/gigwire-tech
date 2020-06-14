@@ -55,7 +55,7 @@ class Stopwatch extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if(this.state.formVal !== ""){
+    if(this.state.formVal !== "" && this.state.timerOn == false) {
       this.populateDB(this.state.time);
       var frm = document.getElementsByName('contact-form')[0];
       frm.reset();  // Reset all form data
@@ -64,6 +64,8 @@ class Stopwatch extends React.Component {
         time: 0,
         formVal: ""
       });
+    } else if (this.state.timerOn === true) {
+      alert("Please stop the timer first and submit again!")
     } else {
       alert("Please enter your Project name first and submit again!")
     }
