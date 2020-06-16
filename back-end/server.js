@@ -23,7 +23,6 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// this is our create method
 // this method adds new data in our database
 app.post('/api/putData', (req, res) => {
   let data = new Data();
