@@ -57,7 +57,7 @@ class Stopwatch extends React.Component {
     event.preventDefault();
     if(this.state.formVal !== "" && this.state.timerOn === false) {
       this.populateDB(this.state.time);
-      var frm = document.getElementsByName('contact-form')[0];
+      var frm = document.getElementsByName('contact-form')[0]; //grabs the form data
       frm.reset();  // Reset all form data
       this.setState({
         timeStart: 0,
